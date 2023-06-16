@@ -47,7 +47,7 @@ class Photo:
             return print('please set your img name')
 
         # DOWNLOAD IMAGE
-        self.img.save(f"C:/Users/micha/OneDrive/Pulpit/{img_var}.png")
+        self.img.save(f"Your path{img_var}.png")
 
 
 window = Tk()
