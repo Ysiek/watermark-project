@@ -20,11 +20,13 @@ class Photo:
 
         # CREATE WATERMARK
         python_watermark = Image.open('python-logo.png')
-        watermark = python_watermark.convert('RGBA').resize((100, 100))
+        watermark = python_watermark.convert('RGBA').resize((int(img_pil_object.size[0] / 5), int(img_pil_object.size[1] / 5)))
         self.img.alpha_composite(watermark)
 
         # SHOW IMAGE
-        photo = ImageTk.PhotoImage(self.img)
+        # photo = ImageTk.PhotoImage(self.img)
+        mini_photo = img_pil_object.resize((300, 300))
+        photo = ImageTk.PhotoImage(mini_photo)
         label = Label(f, image=photo)
         label.image = photo
         label.place(x=200, y=200, anchor=CENTER)
